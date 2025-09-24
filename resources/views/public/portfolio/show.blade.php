@@ -48,20 +48,10 @@
       {{-- Cover --}}
       <div class="col-md-4">
         <div class="sticky-lg">
-          @if($item->cover_url)
-            <a href="javascript:void(0)" class="d-block cover-wrap cover-zoom ratio ratio-3x4 rounded-2xl ring shadow-soft overflow-hidden"
-               id="coverTrigger" aria-label="Perbesar sampul">
-              <img src="{{ $item->cover_url }}" class="w-100 h-100" style="object-fit:cover" alt="{{ $item->title }}">
-              @if($item->is_featured)
-                <span class="featured-ribbon">Featured</span>
-              @endif
+    <img src="{{ '/storage/' . $item->cover_path }}" class="w-100 h-100" style="object-fit:cover" alt="{{ $item->title }}">            
               <div class="zoom-ovl"><i class="bi bi-zoom-in fs-4"></i></div>
             </a>
-          @else
-            <div class="ratio ratio-3x4 bg-light rounded-2xl d-flex align-items-center justify-content-center muted">
-              No Cover
-            </div>
-          @endif
+
         </div>
       </div>
 

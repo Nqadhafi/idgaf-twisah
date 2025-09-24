@@ -8,7 +8,8 @@
       <header class="mb-4">
         <h1 class="h3 mb-1 mt-4 text-center">{{ $page->title }}</h1>
         @if($page->meta_description)
-          <p class="text-secondary mb-0">{{ $page->meta_description }}</p>
+          <meta name="description" content="{{ \Illuminate\Support\Str::limit(strip_tags($page->meta_description), 160, '') }}">
+
         @endif
       </header>
 

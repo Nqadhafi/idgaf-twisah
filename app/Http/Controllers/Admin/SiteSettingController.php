@@ -11,7 +11,7 @@ class SiteSettingController extends Controller
     public function index()
     {
         // Ambil beberapa kunci penting untuk form gabungan
-        $keys = ['whatsapp_link','contact','maps_embed','about_gallery'];
+        $keys = ['whatsapp_link','contact','maps_embed','about_gallery','visi_misi'];
         $settings = collect($keys)->mapWithKeys(fn($k)=>[$k => SiteSetting::get($k)]);
         return view('admin.settings.index', compact('settings'));
     }

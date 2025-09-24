@@ -16,6 +16,7 @@ class PortfolioController extends Controller
             ->ordered();
 
         $items = $q->paginate(12)->withQueryString();
+        // dd($items);
         return view('public.portfolio.index', compact('items'));
     }
 

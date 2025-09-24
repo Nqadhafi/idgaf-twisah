@@ -52,6 +52,28 @@
   </div>
 
   <div class="card mb-3">
+  <div class="card-header">Visi &amp; Misi</div>
+  <div class="card-body">
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <label>Visi</label>
+        <textarea class="form-control" name="settings[visi_misi][visi]" rows="4"
+          placeholder="Contoh: Menjadi percetakan paling dipercaya…">{{ data_get($settings,'visi_misi.visi') }}</textarea>
+        <small class="text-muted">Isi ringkas, 1–3 kalimat.</small>
+      </div>
+      <div class="form-group col-md-7">
+        <label>Misi</label>
+        <textarea class="form-control" name="settings[visi_misi][misi]" rows="6"
+          placeholder="Tulis satu poin per baris&#10;Kualitas cetak premium&#10;Layanan tepat waktu&#10;Inovasi berkelanjutan">{{ data_get($settings,'visi_misi.misi') }}</textarea>
+        <small class="text-muted">
+          Satu poin per baris. (Opsional: bisa juga simpan sebagai JSON array <code>["Poin 1","Poin 2"]</code> bila diperlukan.)
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="card mb-3">
     <div class="card-header">About Gallery</div>
     <div class="card-body">
       <div class="form-group">

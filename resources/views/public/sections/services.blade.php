@@ -25,7 +25,7 @@
 
     {{-- Section header selaras --}}
     <div class="section-header mb-4">
-      <h2 id="svc-title" class="title section-title h4 mb-1">{{ $data['heading'] ?? 'Layanan Kami' }}</h2>
+      {{-- <h2 id="svc-title" class="title section-title h4 mb-1">{{ $data['heading'] ?? '' }}</h2> --}}
       <div class="prestige-line"></div>
     </div>
 
