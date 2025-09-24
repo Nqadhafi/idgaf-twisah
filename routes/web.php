@@ -57,11 +57,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','admin'])->group(func
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     // Pages (tanpa show)
-    Route::resource('pages', PageController::class)->except(['show']);
+    Route::resource('pages', PageController::class)->except(['show'])->parameters(['pages' => 'page:id']);
 
     // Nested: Sections di dalam Page
-    Route::prefix('pages/{page}')->name('pages.')->group(function () {
-        Route::resource('sections', SectionController::class)->except(['show']);
+    Route::prefix('pages/{page:id}')->name('pages.')->group(function () {
+        Route::resource('sections', SectionController::class)->except(['show'])->parameters(['sections' => 'section:id']);
         // AJAX: reorder & toggle
         Route::post('sections/reorder', [SectionController::class, 'reorder'])->name('sections.reorder');
         Route::post('sections/{section}/toggle', [SectionController::class, 'toggleVisibility'])->name('sections.toggle');
