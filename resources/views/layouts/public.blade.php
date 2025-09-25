@@ -7,14 +7,14 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>@yield('title', config('app.name'))</title>
-  <meta name="title" content="@yield('meta_title', 'Shabat Printing — Penerbitan & Percetakan')">
+  <meta name="title" content="@yield('meta_title', 'Shabat Warna Gemilang — Penerbitan & Percetakan')">
   <meta name="description" content="@yield('meta_description', 'Bergabunglah dengan layanan percetakan & penerbitan tepercaya.')">
   {{-- Open Graph --}}
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ url()->current() }}" />
-  <meta property="og:title" content="@yield('og_title', 'Shabat Printing')" />
+  <meta property="og:title" content="@yield('og_title', 'Shabat Warna Gemilang')" />
   <meta property="og:description" content="@yield('og_description', 'Percetakan & penerbitan profesional.')" />
-  <meta property="og:image" content="@yield('og_image', asset('favicon.png'))" />
+  <meta property="og:image" content="@yield('og_image', asset('/storage/img_logo/swg-color.webp'))" />
   {{-- Twitter --}}
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -44,7 +44,7 @@
     .navbar.solid .btn-nav{color:#fff; background:var(--brand); border-color:var(--brand);}
     .btn-nav-outline{border:1px solid #fff; color:#fff;}
     .navbar.solid .btn-nav-outline{border-color:var(--brand); color:var(--brand);}
-    .brand-logo{height:36px; width:auto}
+    .brand-logo{height:4rem; width:auto}
     /* ===== HERO fullscreen carousel (overlay gelap) ===== */
     .hero-vh{min-height:100vh;}
     .hero-slide{position:relative; min-height:100vh; background-size:cover; background-position:center;}
@@ -65,8 +65,8 @@
 @php
   $isHome = request()->routeIs('home');
   $branding = \App\Models\SiteSetting::get('branding', []);
-  $logo_dark  = !empty($branding['logo_dark'])  ? asset('storage/img_logo/swg-color.webp')   : null;
-  $logo_light = !empty($branding['logo_light']) ?  asset('storage/img_logo/swg-white.webp')  : null;
+  $logo_dark  =  asset('/storage/img_logo/swg-color.webp') ?? ''  ;
+  $logo_light =  asset('/storage/img_logo/swg-white.webp')  ?? ''  ;
 @endphp
 <body class="d-flex flex-column min-vh-100">
   {{-- NAVBAR --}}
@@ -132,7 +132,7 @@
           @else
             <div class="h5 mb-2">{{ config('app.name','Shabat Printing') }}</div>
           @endif
-          <small class="text-white d-block">Designed & developed by Shabat Printing</small>
+          {{-- <small class="text-white d-block">Designed & developed by Shabat Printing</small> --}}
         </div>
         <div class="col-6 col-md">
           <h5>Company</h5>
@@ -144,9 +144,9 @@
         <div class="col-6 col-md">
           <h5>Follow Us</h5>
           <ul class="list-unstyled small">
-            <li><a class="text-white text-decoration-none" href="#">Instagram</a></li>
-            <li><a class="text-white text-decoration-none" href="#">TikTok</a></li>
-            <li><a class="text-white text-decoration-none" href="#">Facebook</a></li>
+            <li><a class="text-white text-decoration-none" href="https://instagram/shabat_printing">Instagram</a></li>
+            <li><a class="text-white text-decoration-none" href="https://tiktok.com/@shabatprinting">TikTok</a></li>
+            <li><a class="text-white text-decoration-none" href="https://www.facebook.com/shabatprint">Facebook</a></li>
           </ul>
         </div>
         <div class="col-12 col-md-auto">
@@ -156,7 +156,7 @@
       </div>
       <hr class="border-secondary mt-4">
       <div class="d-flex justify-content-between small text-muted">
-        <div>© {{ date('Y') }} Shabat Printing. All rights reserved.</div>
+        <div>© {{ date('Y') }} Shabat Warna Gemilang. All rights reserved.</div>
         <div class="d-flex gap-2">
           <ion-icon name="logo-instagram"></ion-icon>
           <ion-icon name="logo-tiktok"></ion-icon>
