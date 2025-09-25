@@ -65,8 +65,8 @@
 @php
   $isHome = request()->routeIs('home');
   $branding = \App\Models\SiteSetting::get('branding', []);
-  $logo_dark  = !empty($branding['logo_dark'])  ? \Illuminate\Support\Facades\Storage::url($branding['logo_dark'])   : null;
-  $logo_light = !empty($branding['logo_light']) ? \Illuminate\Support\Facades\Storage::url($branding['logo_light'])  : null;
+  $logo_dark  = !empty($branding['logo_dark'])  ? {{ asset('storage/img_logo/swg-color.webp')}}   : null;
+  $logo_light = !empty($branding['logo_light']) ? {{ asset('storage/img_logo/swg-white.webp')}}  : null;
 @endphp
 <body class="d-flex flex-column min-vh-100">
   {{-- NAVBAR --}}
