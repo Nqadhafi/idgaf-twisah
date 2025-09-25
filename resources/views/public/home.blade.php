@@ -43,14 +43,14 @@
     @include('public.sections.services', [
       'data'=>['heading'=>'Layanan Kami']
     ])
-    @include('public.sections.portfolio', [
+    {{-- @include('public.sections.portfolio', [
       'data'=>[
         'heading'=>'Buku Terbit',
         'show_featured'=>true,
         'limit'=>8,
         'cta_more_url'=>route('portfolio.index')
       ]
-    ])
+    ]) --}}
     @include('public.sections.testimonials', [
       'data'=>['heading'=>'Apa Kata Penulis']
     ])
