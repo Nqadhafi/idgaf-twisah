@@ -17,7 +17,7 @@
 
     {{-- Section header selaras --}}
     <div class="section-header mb-4">
-      <h2 class="title section-title h4 mb-1">{{ $data['heading'] ?? 'Apa Kata Penulis' }}</h2>
+      <h2 class="title section-title h4 mb-1 text-center">{{ $data['heading'] ?? 'Apa Kata Penulis' }}</h2>
       <div class="prestige-line"></div>
     </div>
 

@@ -28,7 +28,7 @@
 
     {{-- Section header selaras --}}
     <div class="section-header mb-4">
-      <h2 id="pkg-title" class="title section-title h4 mb-1">{{ $data['heading'] ?? 'Paket Penerbitan' }}</h2>
+      <h2 id="pkg-title" class="title section-title h4 mb-1 text-center">{{ $data['heading'] ?? 'Paket Penerbitan' }}</h2>
       <div class="prestige-line"></div>
     </div>
 
